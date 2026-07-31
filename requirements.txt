@@ -7,6 +7,6 @@ catboost
 matplotlib
 seaborn
 plotly
-streamlit
+streamlit>=1.35
 shap
 joblib
