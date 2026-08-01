@@ -222,7 +222,7 @@ with tab1:
                 )
             else:
                 st.info(
-                    "Add `dataset/sample_listings.csv` to your repo to show nearby comparable "
+                    "Add `dataset/processed/sample_listings.csv` to your repo to show nearby comparable "
                     "sales here (mirrors the Real Estate Appraiser workflow in the spec)."
                 )
 
@@ -298,7 +298,7 @@ with tab3:
             st.bar_chart(zip_price)
     else:
         st.info(
-            "Add `dataset/sample_listings.csv` (with lat, long, price, zipcode columns) "
+            "Add `dataset/processed/sample_listings.csv` (with lat, long, price, zipcode columns) "
             "to your repo to power the map and zipcode breakdown here."
         )
 
