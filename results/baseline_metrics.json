@@ -1,0 +1,16 @@
+{
+    "dataset": "King County Housing",
+    "train_size": 17148,
+    "test_size": 4287,
+    "random_state": 42,
+    "linear_regression": {
+        "MAPE": 25.673605970077922,
+        "RMSE": 186074.08535645937,
+        "R2": 0.7231007162557037
+    },
+    "xgboost": {
+        "MAPE": 12.136701192311355,
+        "RMSE": 107863.61064227624,
+        "R2": 0.9069535187060414
+    }
+}
