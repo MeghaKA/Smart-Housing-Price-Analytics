@@ -104,6 +104,17 @@ Price Prediction
 - ⏳ Machine Learning Models
 - ⏳ Model Evaluation
 - ⏳ Performance Comparison
++ ✅ Repository Created
++ ✅ Dataset Uploaded
++ ✅ Exploratory Data Analysis (`notebooks/Day1_eda.ipynb`)
++ ✅ Data Cleaning (`dataset/processed/cleaned_kc_house_data.csv`)
++ ✅ Feature Engineering (`notebooks/Day2_Feature_engineering.ipynb`)
++ ✅ Baseline Machine Learning Models — Linear Regression & XGBoost (`notebooks/Day3_baseline_model.ipynb`)
++ ✅ Spatial KNN Graph Construction (`notebooks/Day4_knn_graph.ipynb`)
++ ✅ Attention-based Spatial (GNN) Model (`notebooks/Day5_attention_gnn_model.ipynb`)
++ ✅ Model Evaluation & Performance Comparison (`notebooks/Day6_evaluation.ipynb`, `results/`, `reports/figures/`)
++ ⏳ Written Project Report / Final Summary
++ ⏳ Live Dashboard Polish (`app/app.py`)
 
 ---
 
