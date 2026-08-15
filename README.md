@@ -98,14 +98,9 @@ Price Prediction
 
 - ✅ Repository Created
 - ✅ Dataset Uploaded
-- ⏳ Exploratory Data Analysis
-- ⏳ Data Cleaning
-- ⏳ Feature Engineering
 - ⏳ Machine Learning Models
 - ⏳ Model Evaluation
 - ⏳ Performance Comparison
-+ ✅ Repository Created
-+ ✅ Dataset Uploaded
 + ✅ Exploratory Data Analysis (`notebooks/Day1_eda.ipynb`)
 + ✅ Data Cleaning (`dataset/processed/cleaned_kc_house_data.csv`)
 + ✅ Feature Engineering (`notebooks/Day2_Feature_engineering.ipynb`)
