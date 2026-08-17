@@ -13,6 +13,12 @@
   <img src="https://img.shields.io/github/license/MeghaKA/Smart-Housing-Price-Analytics">
 </p>
 
+<p align="center">
+  <a href="https://megha-housing-valuation.streamlit.app">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white">
+  </a>
+</p>
+
 ---
 
 ## 💼 Business Problem
