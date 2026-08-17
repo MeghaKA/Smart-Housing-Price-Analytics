@@ -12,11 +12,14 @@
   <img src="https://img.shields.io/badge/Spatial%20AI-KNN%20%2B%20Attention-6A1B9A">
   <img src="https://img.shields.io/github/license/MeghaKA/Smart-Housing-Price-Analytics">
 </p>
-
 <p align="center">
   <a href="https://megha-housing-valuation.streamlit.app">
     <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white">
   </a>
+</p>
+
+<p align="center">
+  <i>Interactive property valuation demo powered by the project's trained machine learning model.</i>
 </p>
 
 ---
