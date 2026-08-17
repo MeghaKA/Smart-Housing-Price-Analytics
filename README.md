@@ -1,206 +1,135 @@
-# 🏡 Smart Housing Price Analytics
+# 🏠 Smart Housing Price Analytics
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikit-learn" alt="scikit-learn">
-  <img src="https://img.shields.io/badge/XGBoost-Enabled-brightgreen" alt="XGBoost">
-  <img src="https://img.shields.io/github/last-commit/MeghaKA/Smart-Housing-Price-Analytics" alt="Last Commit">
-  <img src="https://img.shields.io/github/stars/MeghaKA/Smart-Housing-Price-Analytics?style=social" alt="Stars">
+  <b>Data-driven property valuation with machine learning and spatial intelligence.</b>
 </p>
 
 <p align="center">
-  <b>End-to-end machine learning pipeline for predicting residential property prices</b><br>
-  using the King County Housing Dataset — from raw data to a deployable prediction model.
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/XGBoost-ML-189F00">
+  <img src="https://img.shields.io/badge/PyTorch-Attention-EE4C2C?logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/Scikit--learn-ML-F7931E?logo=scikit-learn&logoColor=white">
+  <img src="https://img.shields.io/badge/Spatial%20AI-KNN%20%2B%20Attention-6A1B9A">
+  <img src="https://img.shields.io/github/license/MeghaKA/Smart-Housing-Price-Analytics">
 </p>
 
 ---
 
-## 📑 Table of Contents
-- [Overview](#-overview)
-- [Demo / Screenshots](#-demo--screenshots)
-- [Dataset](#-dataset)
-- [Repository Structure](#-repository-structure)
-- [Methodology](#-methodology)
-- [Results](#-results)
-- [Key Insights](#-key-insights)
-- [Tech Stack](#️-tech-stack)
-- [Getting Started](#-getting-started)
-- [Future Work](#-future-improvements)
-- [License](#-license)
-- [Author](#-author)
+## 💼 Business Problem
+
+Property valuation depends on more than the physical characteristics of a home.  
+**Location, neighbourhood context, property quality, and comparable nearby sales** can all influence market value.
+
+This project explores how machine learning can combine these signals to build a reliable automated property valuation system.
+
+**Key question:**
+
+> Can neighbourhood-aware modelling improve residential price prediction beyond conventional machine learning?
 
 ---
 
-## 📌 Overview
+## 📊 Solution
 
-This project builds and compares machine learning models to predict residential
-property prices in King County, WA, using structural, locational, and quality
-features of each home. It covers the full applied-ML lifecycle: exploratory
-data analysis, data cleaning, feature engineering, model training,
-hyperparameter tuning, and evaluation — with an emphasis on both **predictive
-accuracy** and **interpretability** (which features actually drive price).
+The system combines:
 
-**Objectives**
-- Perform in-depth Exploratory Data Analysis (EDA)
-- Clean and preprocess real-world housing data
-- Engineer meaningful predictive features (e.g. house age, renovation flag, price per sqft)
-- Train and compare multiple regression models
-- Identify the strongest price-driving factors
-- Package a reproducible, end-to-end prediction pipeline
+- 🏡 Property characteristics
+- 📍 Geographic location
+- 🕒 Property age and renovation history
+- 📐 Engineered valuation features
+- 🗺️ Nearby comparable properties
+- 🤖 Machine learning predictions
+
+A spatial KNN graph identifies the **10 nearest properties** for each home, while an attention mechanism learns which nearby properties are more relevant to valuation.
 
 ---
 
-## 🎥 Demo / Screenshots
+## 📈 Performance
 
-> _Add a screenshot or GIF of your `app/` prediction interface here, e.g.:_
-> `![App demo](figures/app_demo.gif)`
+Tested on the same held-out dataset:
 
-| EDA | Model Performance |
-|---|---|
-| ![Price distribution](figures/price_distribution.png) | ![Predicted vs Actual](figures/predicted_vs_actual.png) |
+| Model | MAPE ↓ | RMSE ↓ | R² ↑ |
+|---|---:|---:|---:|
+| Linear Regression | 25.67% | $186K | 0.723 |
+| **XGBoost** | **12.14%** | **$108K** | **0.907** |
+| Spatial Attention | 13.69% | $124K | 0.877 |
 
----
+### 🏆 Result
 
-## 📂 Dataset
+**XGBoost delivered the strongest predictive performance**, achieving an R² of **0.907** and MAPE of **12.14%**.
 
-**Source:** [King County Housing Dataset](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) (Kaggle)
-
-~21,600 home sales records (2014–2015) with features including:
-
-| Category | Features |
-|---|---|
-| Structural | Bedrooms, Bathrooms, Living Area (sqft), Lot Size, Floors |
-| Quality | Grade, Condition, Waterfront, View |
-| Temporal | Year Built, Year Renovated |
-| Location | Zip code, Latitude, Longitude |
-| Target | Sale Price |
-
-Raw data lives in `dataset/raw/`; the cleaned, feature-engineered version used
-for modeling is in `dataset/processed/`.
+The spatial attention model did not outperform XGBoost, but demonstrated how **neighbourhood relationships can be explicitly incorporated into automated valuation** and analysed through attention-based spatial reasoning.
 
 ---
 
-## 📁 Repository Structure
+## 🔍 Insights
 
-```
-Smart-Housing-Price-Analytics/
-│
-├── dataset/
-│   ├── raw/                  # Original King County dataset
-│   └── processed/            # Cleaned + feature-engineered data
-├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_data_cleaning_feature_engineering.ipynb
-│   ├── 03_modeling.ipynb
-│   └── 04_evaluation.ipynb
-├── app/                      # Prediction app / interactive demo
-├── figures/                  # All EDA & model-result visualizations
-├── models/                   # Saved trained models (.pkl / .joblib)
-├── results/                  # metrics.csv, model_comparison.csv
-├── reports/                  # Written summary / findings report
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
+- Living area and property quality are important valuation signals.
+- Geographic information provides additional market context.
+- Nearby properties can be modelled as comparable homes rather than independent observations.
+- Strong tabular models remain highly competitive for structured housing data.
+- Spatial modelling creates opportunities for more interpretable neighbourhood-aware valuation systems.
 
 ---
 
-## 🔍 Methodology
+## 🖼️ Project Highlights
 
-```
-King County Dataset
-      ↓
-Data Cleaning (missing values, outliers, dtype fixes)
-      ↓
-Exploratory Data Analysis
-      ↓
-Feature Engineering (house age, renovation flag, price/sqft, location clusters)
-      ↓
-Train/Test Split + Cross-Validation
-      ↓
-Model Training (Linear Regression → Random Forest → XGBoost)
-      ↓
-Hyperparameter Tuning
-      ↓
-Evaluation (RMSE, MAE, R²) + Feature Importance
-      ↓
-Final Model Selection
-```
+<p align="center">
+  <img src="reports/figures/price_distribution.png" width="48%">
+  <img src="reports/figures/xgboost_feature_importance.png" width="48%">
+</p>
+
+<p align="center">
+  <img src="reports/figures/model_comparison_r2.png" width="48%">
+  <img src="reports/figures/attention_actual_vs_predicted.png" width="48%">
+</p>
 
 ---
 
-## 📊 Results
+## 🛠️ Built With
 
-> _Fill in with your actual numbers from `results/model_comparison.csv`._
-
-| Model | RMSE | MAE | R² |
-|---|---|---|---|
-| Linear Regression | — | — | — |
-| Random Forest | — | — | — |
-| XGBoost (tuned) | — | — | — |
-
-**Best model:** _[model name]_ — selected for the best balance of accuracy and
-generalization on held-out data (see `reports/` for the full write-up).
-
-![Feature Importance](figures/feature_importance.png)
+**Python · Pandas · NumPy · Scikit-learn · XGBoost · PyTorch · Matplotlib · Seaborn · Folium · Jupyter**
 
 ---
 
-## 💡 Key Insights
+## 🚀 Project Workflow
 
-> _Replace with your actual findings, e.g.:_
-- Living area (sqft) and grade were the strongest predictors of price.
-- Waterfront properties commanded a significant price premium even after controlling for size.
-- Renovation recency had a measurable but secondary effect on price.
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Python 3.10+
-- **Data handling:** Pandas, NumPy
-- **Modeling:** Scikit-learn, XGBoost
-- **Visualization:** Matplotlib, Seaborn
-- **Environment:** Jupyter Notebook, Dev Containers
-- **Version control:** Git & GitHub
-
----
-
-## 🚀 Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/MeghaKA/Smart-Housing-Price-Analytics.git
-cd Smart-Housing-Price-Analytics
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run notebooks in order
-jupyter notebook notebooks/01_eda.ipynb
-```
+```text
+Housing Data
+     ↓
+Data Quality & Exploration
+     ↓
+Feature Engineering
+     ↓
+Machine Learning
+     ↓
+Spatial Neighbourhood Graph
+     ↓
+Attention-Based Valuation
+     ↓
+Performance & Error Analysis
 
 ---
 
-## 📊 Future Improvements
+## 🔮 Next Direction
 
-- [ ] Hyperparameter optimization (Optuna / GridSearchCV)
-- [ ] Advanced ensemble / stacking models
-- [ ] Geographic feature engineering (distance to city center, neighborhood clustering)
-- [ ] SHAP-based model explainability
-- [ ] Interactive Streamlit dashboard for live predictions
-- [ ] Deployment (Docker + cloud hosting)
+The framework can be extended toward:
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE) — free to use, modify, and distribute with attribution.
+GAT / GATv2 · GraphSAGE · Spatial Cross-Validation · SHAP Explainability · Neighbour Attention Visualisation · Interactive Property Valuation
 
 ---
 
 ## 👩‍💻 Author
 
-**Megha K A**
-[GitHub](https://github.com/MeghaKA) · Feel free to ⭐ this repo if you found it useful!
+Megha Kalachira Ankush
+
+MSc Data Analytics · B.Tech Computer Science Engineering
+
+GitHub⁠:https://github.com/MeghaKA/Smart-Housing-Price-Analytics
+
+---
+
+## 📄 License
+
+Released under the MIT License.
+
+This version is the one I'd recommend for your repository: **business-oriented, concise, visually attractive, and still technically credible**. It tells a recruiter or hiring manager within a minute **what problem you solved, what you built, what the result was, and why the project is interesting**.
