@@ -132,5 +132,3 @@ GitHub⁠:https://github.com/MeghaKA/Smart-Housing-Price-Analytics
 ## 📄 License
 
 Released under the MIT License.
-
-This version is the one I'd recommend for your repository: *business-oriented, concise, visually attractive, and still technically credible. It tells a recruiter or hiring manager within a minute **what problem you solved, what you built, what the result was, and why the project is interesting*.
